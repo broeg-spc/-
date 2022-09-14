@@ -1,0 +1,46 @@
+<!--
+ * @Author: zhangziyang
+ * @Date: 2022-09-13 17:05:56
+ * @LastEditTime: 2022-09-13 17:12:05
+ * @FilePath: \emr.webuid:\code\chichiTest\oncilck.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        span{
+            background-color: brown;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span>大家好</span>
+    </div>
+    <script>
+        var one=document.getElementById('body');
+        one.onclick=function(){
+            alert("我是body的单击响应函数");
+        };
+        var one1=document.getElementById('box');
+        one1.onclick=function(){
+            alert("我是box的单击响应函数");
+        };
+        var one2=document.getElementById('span');
+        one2.onclick=function(){
+            alert("我是span的单击响应函数");
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!--
+ * @Author: zhangziyang
+ * @Date: 2022-09-07 13:56:20
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-09-07 16:35:04
+ * @FilePath: \emr.webuid:\code\chichiTest\checked.html
+ * @Description: 代码练习
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    你爱好的运动是？
+    <input type="checkbox">全选/全不选<br>
+    <input name="like" type="checkbox">足球
+    <input name="like" type="checkbox">篮球
+    <input name="like" type="checkbox">羽毛球
+    <input name="like" type="checkbox">乒乓球<br>
+    <button id="btn" value="1" name="good">全选</button>
+    <button id="btn1" value="11" name="good">全不选</button>
+    <button id="btn2" value="111" name="good">反选</button>
+    <button id="btn3">提交</button>
+    <script>
+        /**
+         * @description: 按钮绑定点击事件
+         * @param {*} name 按钮
+         * @param {*} fun 点击按钮触发函数
+         */
+        function Click(name, fun) {
+            this.name = document.getElementById(name);
+            name.onclick = fun;
+        }
+        /**
+         * @description: 提交按钮点击事件
+         * @param {*} btn3 提交按钮
+         * @param {*} function 选中按钮推入数组data
+         */
+        Click(btn3, function () {
+            let item = document.getElementsByName("like");
+            let data=[];
+            for (var i = 0; i < item.length; i++) {
+                if(item[i].checked !=''){
+                    data.push(item);
+                    alert(item)
+                }
+            }
+            console.log(data.innHTML);
+        });
+
+        Click(btn, function () {
+            let item = document.getElementsByName("like");
+            for (var i = 0; i < item.length; i++) {
+                item[i].checked = true;
+            }
+        });
+
+        Click(btn1, function () {
+            let item = document.getElementsByName("like");
+            for (var i = 0; i < item.length; i++) {
+                item[i].checked = false;
+            }
+        });
+
+        Click(btn2, function () {
+            let item = document.getElementsByName("like");
+            for (var i = 0; i < item.length; i++) {
+                item[i].checked =! item[i].checked;
+            }
+        });
+
+       
+    </script>
+</body>
+
+</html>

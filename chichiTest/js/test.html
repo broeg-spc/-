@@ -1,0 +1,107 @@
+<!--
+ * @Author: zhangziyang
+ * @Date: 2022-08-30 09:41:11
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-09-13 09:00:00
+ * @FilePath: \emr.webuid:\code\chichiTest\test.html
+ * @Description: 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #box{
+            width: 200px;height:200px;background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <ul id="city">
+        <li>滑冰</li>
+        <li>滑雪</li>
+    </ul>
+    <button id="click">查询爱好</button>
+    <button id="btn" value="1" name="good">增加爱好</button>
+    <button id="btn1" value="11" name="good">按钮2</button>
+    <button id="btn2" value="111" name="good">按钮3</button>
+    <div id="box" ></div>
+    <button id="btn01">点击我</button>
+    <script>
+        var box = document.getElementById(box);
+        var btn01 = document.getElementById(btn01);
+         btn01.onclick=function name() {
+            alert("hj");
+            box.style.width = '300px';
+        }
+
+
+
+
+        /**
+         * @description: 按钮绑定点击事件
+         * @param {*} name 按钮
+         * @param {*} fun 点击按钮触发函数
+         */
+        function myClick(name, fun) {
+            this.name = document.getElementById(name);
+            name.onclick = fun;
+        }
+        //定义函数，遍历元素
+
+        /**
+         * @description: 
+         * @param {*} data 
+         * @return {*}
+         */
+        function traverse(data) {
+            for (var i = 0; i < data.length; i++) {
+                console.log(data[i].innerHTML);
+            }
+        }
+
+        function search() {
+            console.log("hi");
+        }
+
+        /**
+         * @description: 点击按钮，增加爱好
+         */
+        function add() {
+            let data = prompt("请输入你的新爱好");
+            //console.log(data.text);
+            if (data == null | data == '') {
+                alert("请输入内容");
+            } else {
+                let e = document.createElement("li");
+                e.innerHTML = data;
+                document.getElementById('city').appendChild(e);
+            }
+        }
+
+        myClick(click, search);
+        myClick(btn, add);
+
+        var b1 = {
+            b2: [1, 'abc', console.log],
+            b3: function () {
+                console.log("b3");
+                return function () {
+                    return "你好";
+                }
+            }
+        }
+        // console.log(b1 instanceof Object);
+        // console.log(b1.b3 instanceof Object,b1.b3 instanceof Array);
+        //  //b1.b3()对象中的函数返回值，()()返回值中的函数返回值
+        // console.log(b1.b3()());    
+        var a;
+        console.log(a);
+        var b = null;
+        console.log(b);
+
+    </script>
+
+</body>
+
+</html>

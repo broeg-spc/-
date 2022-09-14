@@ -1,0 +1,34 @@
+<!--
+ * @Author: zhangziyang
+ * @Date: 2022-09-14 16:30:47
+ * @LastEditTime: 2022-09-14 16:34:08
+ * @FilePath: \emr.webuid:\code\chichiTest\jQurey-study\08.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="js/jquery-3.6.1.js"></script>
+    <script>
+        //1 $.each(x,y) x属性名 y属性值
+        var obj={
+            name:'张三',
+            setNmae:function(name){
+                this.name=name;
+            }
+        }
+        $.each(obj,function(key,value){
+            console.log(key,value);
+        })
+    </script>
+</body>
+
+</html>

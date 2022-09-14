@@ -1,0 +1,39 @@
+<!--
+ * @Author: zhangziyang
+ * @Date: 2022-09-14 14:51:29
+ * @LastEditTime: 2022-09-14 15:04:07
+ * @FilePath: \emr.webuid:\code\chichiTest\jQurey-study\04.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>AAAAA</li>
+        <li class="box">ccccc</li>
+        <li title="hello"><span>BBBBB</span></li>
+        <li title="hello"><span>DDDD</span></li>
+        <span>EEEEE</span>
+    </ul>
+    <script src="js/jquery-3.6.1.js"></script>
+    <script>
+        //1
+        $('ul span').css('background','yellow');
+        //2
+        $('ul>span').css('font-size','28px');
+        //3
+        $('.box+li').css('border','2px solid  pink');
+        //4
+        $('ul .box~*').css('margin-left','20px');
+    </script>
+</body>
+
+</html>

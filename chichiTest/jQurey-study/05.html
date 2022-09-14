@@ -1,0 +1,53 @@
+<!--
+ * @Author: zhangziyang
+ * @Date: 2022-09-14 15:09:17
+ * @LastEditTime: 2022-09-14 15:38:12
+ * @FilePath: \emr.webuid:\code\chichiTest\jQurey-study\05.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1" class="box">class为box的div1</div>
+    <div id="div2" class="box">class为box的div2</div>
+    <div id="div3">div3</div>
+    <span class="box">class为box的span</span><br />
+    <ul>
+        <li>AAAAA</li>
+        <li title="hello">BBBBB</li>
+        <li class="box">ccccc</li>
+        <li title="hello">DDDDDD</li>
+        <li title="two">BBBBB</1i>
+        <li style="display: none;">我本来是隐藏的</li>
+    </ul>
+    <script src="js/jquery-3.6.1.js"></script>
+    <script>
+        //1
+        $('div:first').css('background', 'red');
+        //2
+        $('.box:last').css('font-size', '28px');
+        //3  没有class属性也可以
+        $('div:not(.box)').css('color', 'pink');
+        //4 一步步执行，先执行:gt(0),选出大于索引0，再执行lt，选出lt
+        //lt(index)匹配所有小于给定索引值的元素 gt(index)匹配所有大于给定索引值的元素 
+        $('li:gt(0):lt(2)').css('border-left', '2px solid  gold');
+        //5 
+        $('li:contains("BBBBB")').css('margin-left', '20px');
+        //6
+        $('li:hidden').css('display', 'flex');
+        //7
+        $('li[title]').css('border-bottom', '5px solid  black');
+        //8  
+        $('li[title="hello"]').css('color','blue');
+    </script>
+</body>
+
+</html>

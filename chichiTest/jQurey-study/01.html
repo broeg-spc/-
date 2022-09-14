@@ -1,0 +1,76 @@
+<!--
+ * @Author: zhangziyang
+ * @Date: 2022-09-14 08:59:07
+ * @LastEditTime: 2022-09-14 11:31:40
+ * @FilePath: \emr.webuid:\code\chichiTest\jQurey-study\01.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 点击确定按钮 提示输入的值 -->
+    <!-- 用户名<input type="text" id="username">
+    <button id="btn1">确定（原生版</button>
+    <button id="btn2">确定（jQuery版</button> -->
+    <div class="">
+        <button id="btn">测试</button><br>
+        <input type="text" name="msg1"><br>
+        <input type="text" name="msg2"><br>
+    </div>
+    <!-- 本地引入jQ -->
+    <script type="text/javascript" src="js/jquery-3.6.1.js"></script>
+    <!-- <script> 
+    //使用原生DOM
+    var btn =document.getElementById('btn1');
+    btn1.onclick=function(){
+        var username=document.getElementById('username').value;
+        alert(username);
+    }
+    //使用jq实现
+    //绑定文档加载完成时的监听
+        //使用jQ核心函数（$/jQuery)
+    // $(function(){
+        $('#btn2').click(function(){     //给btn2绑定监听事件
+            var username=$('#username').val();
+            alert(username);
+        })
+   // })
+</script> -->
+    <script>
+        /* 
+        需求1，点击按钮：显示按钮的文本，显示一个新的的输入框
+    */
+        //1.1 参数为函数：当DOM加载完成时，执行此回调函数
+        $(function () {   //绑定文档加载完成时的监听
+            $('#btn').click(function () {      //1.2
+                alert($(this).html());      //1.3读写合一，（）内无值，读，（）有值，写
+                $('<input type="text" name="msg3"><br>').appendTo('div');//1.4  appendTo从xx盒子中找
+            })
+            //需求2，遍历输出数组中所有元素值
+            //$.each():隐式遍历数组
+            var a = [1, 2, 4, 56, 6];
+            $.each(a, function (index, item) {
+                console.log(index, item);
+            })
+            // 需求3，去掉‘ my atgugu ’两端的空格
+            //$.trim():去除两端的空格
+            var str = '    my atgugu    ';
+            console.log('-----' + str.trim() + '-----');
+            console.log($.type($));
+            console.log(jQuery.type(jQuery));
+            console.log($ instanceof jQuery);
+        })
+        
+    </script>
+
+</body>
+
+</html>
